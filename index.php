@@ -1,16 +1,21 @@
 <?php
-
 declare(strict_types=1);
 
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-//include all your model files here
+// Include all your model files here
 require 'Model/Article.php';
-//include all your controllers here
+require 'Model/Author.php';
+
+// Include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/ArticleController.php';
+require 'Controller/AuthorController.php';
+
+// Start the session once
+session_start();
 
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
@@ -20,18 +25,28 @@ $page = $_GET['page'] ?? null;
 // It will *control* the rest of the work to load the page
 switch ($page) {
     case 'articles':
-        // This is shorthand for:
-        session_start();
-
-        (new ArticleController())->index();
+        $articleController = new ArticleController();
+        $articleController->index();
         break;
-
+   
     case 'articles-show':
         // TODO: detail page
+        $articleController = new ArticleController();
+        $articleController->show();
+        break;
+
+    case 'authors':
+        $authorController = new AuthorController();
+        $authorController->index();
+        break;
+
+    case 'authors-show':
+        $authorController = new AuthorController();
+        $authorController->show();
+        break;
+
     case 'home':
     default:
-        session_start();
-        
         (new HomepageController())->index();
         break;
 }
