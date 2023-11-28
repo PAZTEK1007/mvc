@@ -49,6 +49,7 @@ class ArticleController
                 $rawArticle['title'],
                 $rawArticle['description'],
                 $rawArticle['author'],
+                $rawArticle['authorId'],
                 $rawArticle['img_src'],
                 $rawArticle['publish_date']
             );
@@ -82,6 +83,7 @@ class ArticleController
             $rawArticle['title'],
             $rawArticle['description'],
             $rawArticle['author'],
+            $rawArticle['authorId'],
             $rawArticle['img_src'],
             $rawArticle['publish_date']
         );

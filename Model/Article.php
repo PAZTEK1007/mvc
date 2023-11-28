@@ -9,20 +9,26 @@ class Article
     public ?string $description;
     public ?string $publishDate;
     public ?string $author;
+    public ?int $authorId;
     public ?string $imgSrc;
 
-    public function __construct(?int $id, ?string $title, ?string $description, ?string $author, ?string $imgSrc, ?string $publishDate)
+    public function __construct(?int $id, ?string $title, ?string $description, ?string $author, ?int $authorId, ?string $imgSrc, ?string $publishDate)
     {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->publishDate = $publishDate;
         $this->author = $author;
+        $this->authorId = $authorId;
         $this->imgSrc = $imgSrc;
     }
     public function getAuthor()
     {
         return $this->author;
+    }
+    public function getAuthorId()
+    {
+        return $this->authorId;
     }
     public function getImgSrc()
     {

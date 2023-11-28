@@ -1,31 +1,41 @@
 <?php
 class Author
 {
-    public int $id;
-    public string $name;
-    public ?string $lastName;
-    public ?string $dateOfBirth;
-    public ?string $picture;
-    public ?string $description;
+    private $id;
+    private $username;
+    private $name;
+    private $lastname;
+    private $picture;
+    private $dateOfBirth;
+    private $description;
 
-    public function __construct(?int $id, ?string $name, ?string $lastName, ?string $dateOfBirth, ?string $picture, ?string $description)
-    {
+    public function __construct(
+        $id,
+        $username,
+        $name,
+        $lastname,
+        $picture,
+        $dateOfBirth,
+        $description,
+    ) {
         $this->id = $id;
+        $this->username = $username;
         $this->name = $name;
-        $this->lastName = $lastName;
-        $this->dateOfBirth = $dateOfBirth;
+        $this->lastname = $lastname;
         $this->picture = $picture;
+        $this->dateOfBirth = $dateOfBirth;
         $this->description = $description;
     }
 
+    // Add getters if needed
     public function getId()
     {
         return $this->id;
     }
 
-    public function getPicture()
+    public function getUsername()
     {
-        return $this->picture;
+        return $this->username;
     }
 
     public function getName()
@@ -33,9 +43,19 @@ class Author
         return $this->name;
     }
 
-    public function getLastName()
+    public function getLastname()
     {
-        return $this->lastName;
+        return $this->lastname;
+    }
+
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    public function getDateOfBirth()
+    {
+        return $this->dateOfBirth;
     }
 
     public function getDescription()
@@ -43,21 +63,4 @@ class Author
         return $this->description;
     }
 
-    public function getDateOfBirth($format = 'd-m-y')
-    {
-        $date = $this->dateOfBirth;
-    
-        if ($date !== null && $date !== '') {
-            $dateTime = date_create($date);
-    
-            if ($dateTime !== false) {
-                $formattedDate = date_format($dateTime, $format);
-                return $formattedDate;
-            } else {
-                return 'Invalid Date';
-            }
-        } else {
-            return 'No Date Available';
-        }
-    }
 }

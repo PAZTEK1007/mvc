@@ -6,8 +6,8 @@
     $articleDescription = $article->getDescription();
     $articlePublishDate = $article->getPublishDate();
     $articleAuthor = $article->getAuthor();
+    $articleAuthorID = $article->getAuthorId();	
     $articleImgSrc = $article->getImgSrc();
-
     $articlePrevious = $articleId - 1;
     $articleNext = $articleId + 1;
     
@@ -22,7 +22,7 @@
 
 
 <section>
-    <h1><?php echo $articleTitle; ?> Par : <a href="" ><?php echo $articleAuthor ?></a></h1>
+    <h1><?php echo $articleTitle; ?> Par : <a href="?page=authors-show&id=<?php echo $articleAuthorID ?>" ><?php echo $articleAuthor?></a></h1>
     <img src="<?php echo $articleImgSrc; ?>" alt="<?php echo $articleTitle; ?>">
     <p><?php echo $articleDescription; ?></p>
     <p>Publish Date: <?php echo $articlePublishDate; ?></p>

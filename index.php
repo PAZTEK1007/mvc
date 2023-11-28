@@ -6,13 +6,13 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 // Include all your model files here
-require 'Model/Article.php';
-require 'Model/Author.php';
+require_once 'Model/Article.php';
+require_once 'Model/Author.php';
 
 // Include all your controllers here
-require 'Controller/HomepageController.php';
-require 'Controller/ArticleController.php';
-require 'Controller/AuthorController.php';
+require_once 'Controller/HomepageController.php';
+require_once 'Controller/ArticleController.php';
+require_once 'Controller/AuthorController.php';
 
 // Start the session once
 session_start();
