@@ -1,7 +1,5 @@
 <?php
-
-require_once 'Data\Db-Manager.php';
-
+require 'Data/DB-Manager.php';
 class AuthorController
 {
     protected $PDO;

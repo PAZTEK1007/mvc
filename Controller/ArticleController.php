@@ -1,6 +1,5 @@
 <?php
 
-require_once 'Data\Db-Manager.php';
 
 class ArticleController
 {
