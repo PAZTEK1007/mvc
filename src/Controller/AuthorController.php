@@ -1,5 +1,10 @@
 <?php
-require 'Data/DB-Manager.php';
+namespace App\Controller;
+
+use App\Data\DataBaseManager;
+use App\Model\Author;
+use App\Model\Article;
+
 class AuthorController
 {
     protected $PDO;
